@@ -1,16 +1,19 @@
-import boto3, os
+import boto3, os, json
 from sys import argv
 
 def connect(from_bucket, method, to_bucket):
     try:
-        client = boto3.client('s3')
-        requests = client.list_objects(Bucket=from_bucket)
-        request = boto3.resource('s3').Object(from_bucket, requests['Contents'][0]['Key'])
-        request.download_file('file')
-        request_file = open('file')
-        print(request_file.read())
-        request_file.close()
-        os.remove('file')
+        from_client = boto3.client('s3')
+        requests = from_client.list_objects(Bucket=from_bucket)
+        for request in requests['Contents']:
+            request = boto3.resource('s3').Object(from_bucket, request['Key'])
+            request.download_file('file')
+            request_file = open('file')
+            json_object = json.loads(request_file.read())
+            request_file.close()
+            to_resource = boto3.resource(method)
+            to_resource.Object(to_bucket, json_object['widgetId']).upload_file('file')
+            os.remove('file')
 
     except:
         print('Unable to connect')
