@@ -5,6 +5,7 @@ def get_object(from_bucket, object_key, file_name):
     try:
         request = boto3.resource('s3').Object(from_bucket, object_key)
         request.download_file(file_name)
+        request.delete()
     except:
         print(f'Error downloading object {object_key} from S3')
 
@@ -20,7 +21,7 @@ def read_object(request_file, file_name):
 
 def put_object(method, to_bucket, json_object, file_name):
     try:
-        print(f'{json_object["type"][:-1]}ing {json_object["widgetId"]} in {to_bucket} using {method}')
+        print(f'{json_object["requestId"]} {json_object["type"][:-1]}ing {json_object["widgetId"]} in {to_bucket} using {method}')
         to_resource = boto3.resource(method)
         if json_object['type'] == 'create':
             del json_object['type']

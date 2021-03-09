@@ -1,1 +1,0 @@
-This is an object to be uploaded to AWS S3
