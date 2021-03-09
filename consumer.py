@@ -20,14 +20,17 @@ def read_object(request_file, file_name):
 
 def put_object(method, to_bucket, json_object, file_name):
     try:
-        print(f'Connecting to {to_bucket} using {method}')
+        print(f'{json_object["type"][:-1]}ing {json_object["widgetId"]} in {to_bucket} using {method}')
         to_resource = boto3.resource(method)
-        del json_object['type']
-        del json_object['requestId']
-        f = open(file_name, 'w')
-        f.write(json_object)
-        f.close()
-        #to_resource.Object(to_bucket, json_object['widgetId']).upload_file(file_name)
+        if json_object['type'] == 'create':
+            del json_object['type']
+            del json_object['requestId']
+            f = open(file_name, 'w')
+            f.write(json.dumps(json_object))
+            f.close()
+            to_resource.Object(to_bucket, json_object['widgetId']).upload_file(file_name)
+        elif json_object['type'] == 'delete':
+            to_resource.Object(to_bucket, json_object['widgetId']).delete()
     except:
         print(f'Error putting JSON object')
 
