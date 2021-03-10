@@ -1,0 +1,825 @@
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Bucket
+DEBUG:boto3.resources.model:Renaming Bucket attribute name
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x7f454986e840>
+DEBUG:boto3.resources.collection:Calling paginated s3:list_objects with {'Bucket': 'usu-cs5260-dax-requests'}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function set_list_objects_encoding_type_url at 0x7f4549b32730>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f4548733320>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f454877a160>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f4548733320>>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ListObjects) with params: {'url_path': '/usu-cs5260-dax-requests', 'query_string': {'encoding-type': 'url'}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45487337f0>, 'has_streaming_input': False, 'auth_type': None, 'encoding_type_auto_set': True, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.ListObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4548733f28>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f4548761978>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f454877a438>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+GET
+/
+encoding-type=url
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050314Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050314Z
+20210310/us-east-1/s3/aws4_request
+48404e0cb0d5a8898be18d13484589b5207fa74a3c52e57975ef890bbe62fb1b
+DEBUG:botocore.auth:Signature:
+7f6a95d61fc90bf375a585e84dece6b867ecbab91ef5d61a74c57fef8fe5bef4
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=GET, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050314Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=7f6a95d61fc90bf375a585e84dece6b867ecbab91ef5d61a74c57fef8fe5bef4'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "GET /?encoding-type=url HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': '9HRq/OFqC9iN5CR1K9Nm29OqmWUaE6u81a7NO65xl4LCm0WiDjVOispmGvfkZ97m4OAZAWfzYbk=', 'x-amz-request-id': 'TK9N98CG8EW6EAP1', 'Date': 'Wed, 10 Mar 2021 05:03:16 GMT', 'x-amz-bucket-region': 'us-east-1', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>usu-cs5260-dax-requests</Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>create_request</Key><LastModified>2021-03-10T05:03:14.000Z</LastModified><ETag>&quot;2f0e9b3e926740886db003a60fea49aa&quot;</ETag><Size>157</Size><Owner><ID>e0b044761be4384461d71208435e0a82414d92f61f9f1f9c531a262017f7c869</ID><DisplayName>awslabsc0w1525286t1608472996</DisplayName></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4548733400>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f4548733320>>
+DEBUG:botocore.hooks:Event after-call.s3.ListObjects: calling handler <function decode_list_object at 0x7f4549b327b8>
+DEBUG:boto3.resources.factory:Loading s3:ObjectSummary
+DEBUG:boto3.resources.model:Renaming ObjectSummary attribute key
+DEBUG:botocore.hooks:Event creating-resource-class.s3.ObjectSummary: calling handler <function lazy_call.<locals>._handler at 0x7f454986e950>
+DEBUG:boto3.resources.action:Calling s3:delete_objects with {'Bucket': 'usu-cs5260-dax-requests', 'Delete': {'Objects': [{'Key': 'create_request'}]}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f4548733320>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f454877a160>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObjects: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f4548733320>>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObjects: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=DeleteObjects) with params: {'url_path': '/usu-cs5260-dax-requests?delete', 'query_string': {}, 'method': 'POST', 'headers': {'Content-MD5': 'w8EBU+6r02xk0MSkxXqrWA==', 'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'<Delete xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Object><Key>create_request</Key></Object></Delete>', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests?delete', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45487337f0>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.DeleteObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4548733f28>>
+DEBUG:botocore.hooks:Event choose-signer.s3.DeleteObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f4548761978>>
+DEBUG:botocore.hooks:Event choose-signer.s3.DeleteObjects: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.DeleteObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f454877a438>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests?delete
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/?delete
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+delete=
+content-md5:w8EBU+6r02xk0MSkxXqrWA==
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:72c549c0afb16fecba5551a0022cafb5560229cb3287d9c5c6cfda765d64c358
+x-amz-date:20210310T050315Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+72c549c0afb16fecba5551a0022cafb5560229cb3287d9c5c6cfda765d64c358
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050315Z
+20210310/us-east-1/s3/aws4_request
+698f3ee9bcaa08c06a24fd7cccb8c0e1e010d8e3209fbe9dc9d709f54a710159
+DEBUG:botocore.auth:Signature:
+f1c466929bd2364ccac557ac9d80e1da5f8c260e6187bd8aedd65ad59466894c
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/?delete, headers={'Content-MD5': b'w8EBU+6r02xk0MSkxXqrWA==', 'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050315Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'72c549c0afb16fecba5551a0022cafb5560229cb3287d9c5c6cfda765d64c358', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=f1c466929bd2364ccac557ac9d80e1da5f8c260e6187bd8aedd65ad59466894c', 'Content-Length': '107'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "POST /?delete HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'wzPCgGt4rQxvItGom2ZL/ma/mVDRDmCZQe5UG2xMXvyeVj07r7039VVkRwFo7gEw14Ny7PZkzKQ=', 'x-amz-request-id': 'TK9WV2CG53BS8DZR', 'Date': 'Wed, 10 Mar 2021 05:03:16 GMT', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3', 'Connection': 'close'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<DeleteResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Deleted><Key>create_request</Key></Deleted></DeleteResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.DeleteObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4548733400>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.DeleteObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f4548733320>>
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': 'TK9WV2CG53BS8DZR', 'HostId': 'wzPCgGt4rQxvItGom2ZL/ma/mVDRDmCZQe5UG2xMXvyeVj07r7039VVkRwFo7gEw14Ny7PZkzKQ=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'wzPCgGt4rQxvItGom2ZL/ma/mVDRDmCZQe5UG2xMXvyeVj07r7039VVkRwFo7gEw14Ny7PZkzKQ=', 'x-amz-request-id': 'TK9WV2CG53BS8DZR', 'date': 'Wed, 10 Mar 2021 05:03:16 GMT', 'content-type': 'application/xml', 'transfer-encoding': 'chunked', 'server': 'AmazonS3', 'connection': 'close'}, 'RetryAttempts': 0}, 'Deleted': [{'Key': 'create_request'}]}
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Object
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Object: calling handler <function lazy_call.<locals>._handler at 0x7f454986e8c8>
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454746a550>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454746a550>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454746a550>}) with kwargs {'client': <botocore.client.S3 object at 0x7f45487d98d0>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7f45474546d8>, 'osutil': <s3transfer.utils.OSUtils object at 0x7f4547454630>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7f45474543c8>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454746a550>}
+DEBUG:s3transfer.futures:Submitting task PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7f45474543c8> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.tasks:Executing task PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7f45487d98d0>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7f454746a908>, 'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f4549b32158>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f4549b30598>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f4549b329d8>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f45487d9e10>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f45474c4208>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function conditionally_calculate_md5 at 0x7f454a127620>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f45487d9e10>>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=PutObject) with params: {'url_path': '/usu-cs5260-dax-requests/update_request', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'Content-MD5': 'KyVmo6N2D69ZGjKbm4ym/g==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x7f454746a908>, 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests/update_request', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45487d9ac8>, 'has_streaming_input': True, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7f4549394d08>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f45487d9a90>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f45487335f8>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f45474c4278>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests/update_request
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/update_request
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/update_request
+
+content-md5:KyVmo6N2D69ZGjKbm4ym/g==
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210310T050315Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050315Z
+20210310/us-east-1/s3/aws4_request
+8ebf4b73335f8f2a93317a7b45f6e65ad121d142ace519d291069820300f8db2
+DEBUG:botocore.auth:Signature:
+2a19982db3d78f6aa5f912c5f5a12fc7e11c44ee94de8255cc06c51aff537ae7
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7f4549394d90>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/update_request, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'Content-MD5': b'KyVmo6N2D69ZGjKbm4ym/g==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210310T050315Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=2a19982db3d78f6aa5f912c5f5a12fc7e11c44ee94de8255cc06c51aff537ae7', 'Content-Length': '160'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "PUT /update_request HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': '+HTl9mWHGTDXod1F2JVan4u5bM16HykKNTnxsf985bnPvuKoQOodURWHwH+iWf9QBPWrAUd3JGE=', 'x-amz-request-id': 'T51H37E7BF7JS4N9', 'Date': 'Wed, 10 Mar 2021 05:03:17 GMT', 'ETag': '"2b2566a3a3760faf591a329b9b8ca6fe"', 'Content-Length': '0', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f45487d9e48>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f45487d9e10>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function set_list_objects_encoding_type_url at 0x7f4549b32730>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f45474547f0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f454745d208>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f45474547f0>>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ListObjects) with params: {'url_path': '/usu-cs5260-dax-requests', 'query_string': {'encoding-type': 'url'}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4547454e10>, 'has_streaming_input': False, 'auth_type': None, 'encoding_type_auto_set': True, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.ListObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4547454da0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f45487335f8>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f454745d198>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+GET
+/
+encoding-type=url
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050317Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050317Z
+20210310/us-east-1/s3/aws4_request
+1d1898985ba723b02d1052047753fafb199497b7d10d09c4ff56f6d17ab645ee
+DEBUG:botocore.auth:Signature:
+bad4cb6d2550890e6baa67933129c644e2f02850870ec150ccca66c5c8e5e051
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=GET, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3', 'X-Amz-Date': b'20210310T050317Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=bad4cb6d2550890e6baa67933129c644e2f02850870ec150ccca66c5c8e5e051'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "GET /?encoding-type=url HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'T62QWNQdXnuGN+K+ApcgCXhxOfXgr3+ls3jT0jNgjwBw+TwN9+7l7o14DHScABVvX5eKJuJgl1M=', 'x-amz-request-id': '7Z4E237R4G0Z2VBC', 'Date': 'Wed, 10 Mar 2021 05:03:18 GMT', 'x-amz-bucket-region': 'us-east-1', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>usu-cs5260-dax-requests</Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>update_request</Key><LastModified>2021-03-10T05:03:17.000Z</LastModified><ETag>&quot;2b2566a3a3760faf591a329b9b8ca6fe&quot;</ETag><Size>160</Size><Owner><ID>e0b044761be4384461d71208435e0a82414d92f61f9f1f9c531a262017f7c869</ID><DisplayName>awslabsc0w1525286t1608472996</DisplayName></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x7f45474547b8>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f45474547f0>>
+DEBUG:botocore.hooks:Event after-call.s3.ListObjects: calling handler <function decode_list_object at 0x7f4549b327b8>
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Object
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Object: calling handler <function lazy_call.<locals>._handler at 0x7f454986e8c8>
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454c468f28>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454c468f28>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454c468f28>}) with kwargs {'client': <botocore.client.S3 object at 0x7f4549408b38>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7f454902c518>, 'osutil': <s3transfer.utils.OSUtils object at 0x7f454902c278>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7f454902c3c8>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454c468f28>, 'io_executor': <s3transfer.futures.BoundedExecutor object at 0x7f454c468978>}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function sse_md5 at 0x7f4549b30598>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f454904d0b8>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f4549058ef0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f454904d0b8>>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=HeadObject) with params: {'url_path': '/usu-cs5260-dax-requests/update_request', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests/update_request', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4549408c50>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <function signal_not_transferring at 0x7f4549394d08>
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4549356da0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.HeadObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f4547475d30>>
+DEBUG:botocore.hooks:Event choose-signer.s3.HeadObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.HeadObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f4549058518>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests/update_request
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/update_request
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+HEAD
+/update_request
+
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050317Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050317Z
+20210310/us-east-1/s3/aws4_request
+a2f26b57d089f3cf1583f1a98e95a38faaf0becb659115254c1b06ccb408edf2
+DEBUG:botocore.auth:Signature:
+e8c7cdaf0d0a187b29ba47582a70cf60ef65591ee16f8dca03bcc9d1df7102c1
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <function signal_transferring at 0x7f4549394d90>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=HEAD, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/update_request, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050317Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=e8c7cdaf0d0a187b29ba47582a70cf60ef65591ee16f8dca03bcc9d1df7102c1'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "HEAD /update_request HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'aTzJFosr13f70+17ao902lGi73jdfeTsN3fE/KySlJmMYSzhWP/FefDprJfM1Qua86cUzfhP/Mo=', 'x-amz-request-id': 'Q2EE8QGPXBBFFWK5', 'Date': 'Wed, 10 Mar 2021 05:03:19 GMT', 'Last-Modified': 'Wed, 10 Mar 2021 05:03:17 GMT', 'ETag': '"2b2566a3a3760faf591a329b9b8ca6fe"', 'Accept-Ranges': 'bytes', 'Content-Type': 'binary/octet-stream', 'Content-Length': '160', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.HeadObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f454904d080>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.HeadObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f454904d0b8>>
+DEBUG:s3transfer.futures:Submitting task ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7f454902c3c8> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7f4549408b38>, 'bucket': 'usu-cs5260-dax-requests', 'key': 'update_request', 'fileobj': <s3transfer.utils.DeferredOpenFile object at 0x7f454c462c88>, 'extra_args': {}, 'callbacks': [], 'max_attempts': 5, 'download_output_manager': <s3transfer.download.DownloadFilenameOutputManager object at 0x7f454c462cc0>, 'io_chunksize': 262144, 'bandwidth_limiter': None}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <function sse_md5 at 0x7f4549b30598>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f454904d0b8>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f4549058ef0>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.GetObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.GetObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f454904d0b8>>
+DEBUG:botocore.hooks:Event before-call.s3.GetObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetObject) with params: {'url_path': '/usu-cs5260-dax-requests/update_request', 'query_string': {}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests/update_request', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4549408c50>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.GetObject: calling handler <function signal_not_transferring at 0x7f4549394d08>
+DEBUG:botocore.hooks:Event request-created.s3.GetObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4549356da0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.GetObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f4547475d30>>
+DEBUG:botocore.hooks:Event choose-signer.s3.GetObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.GetObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f4549058518>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests/update_request
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/update_request
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+GET
+/update_request
+
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050318Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050318Z
+20210310/us-east-1/s3/aws4_request
+3f2690ff68f6ceac21bde1fb78a4d10a46f78259b8e288f9ec79c5ccb24582d0
+DEBUG:botocore.auth:Signature:
+ec1046f949706664a6efc93a43e53ee7c0213a3d539682e96267c3ebc7e3bd99
+DEBUG:botocore.hooks:Event request-created.s3.GetObject: calling handler <function signal_transferring at 0x7f4549394d90>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=True, method=GET, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/update_request, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050318Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=ec1046f949706664a6efc93a43e53ee7c0213a3d539682e96267c3ebc7e3bd99'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "GET /update_request HTTP/1.1" 200 160
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'LQGifrzkPdaCwSqe72nkVJIllMzSQ79bJrLJpIW528obErLiG1of3uTZUl8AeB97BgZaTMrKa2s=', 'x-amz-request-id': 'Q2EDNGWAKVF360Z5', 'Date': 'Wed, 10 Mar 2021 05:03:19 GMT', 'Last-Modified': 'Wed, 10 Mar 2021 05:03:17 GMT', 'ETag': '"2b2566a3a3760faf591a329b9b8ca6fe"', 'Accept-Ranges': 'bytes', 'Content-Type': 'binary/octet-stream', 'Content-Length': '160', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+<botocore.response.StreamingBody object at 0x7f45492dc2b0>
+DEBUG:botocore.hooks:Event needs-retry.s3.GetObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f454904d080>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.GetObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f454904d0b8>>
+DEBUG:s3transfer.tasks:IOWriteTask(transfer_id=0, {'offset': 0}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:IOWriteTask(transfer_id=0, {'offset': 0}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task IOWriteTask(transfer_id=0, {'offset': 0}) with kwargs {'fileobj': <s3transfer.utils.DeferredOpenFile object at 0x7f454c462c88>, 'offset': 0}
+DEBUG:s3transfer.tasks:IORenameFileTask(transfer_id=0, {'final_filename': 'json_file.txt'}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:IORenameFileTask(transfer_id=0, {'final_filename': 'json_file.txt'}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task IORenameFileTask(transfer_id=0, {'final_filename': 'json_file.txt'}) with kwargs {'fileobj': <s3transfer.utils.DeferredOpenFile object at 0x7f454c462c88>, 'final_filename': 'json_file.txt', 'osutil': <s3transfer.utils.OSUtils object at 0x7f454902c278>}
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Object
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Object: calling handler <function lazy_call.<locals>._handler at 0x7f454986e8c8>
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454906d550>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454906d550>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454906d550>}) with kwargs {'client': <botocore.client.S3 object at 0x7f45492d2ac8>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7f4549083320>, 'osutil': <s3transfer.utils.OSUtils object at 0x7f4549083be0>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7f4549083940>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454906d550>, 'io_executor': <s3transfer.futures.BoundedExecutor object at 0x7f4549366be0>}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function sse_md5 at 0x7f4549b30598>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f45492d2f28>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f45492d27f0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f45492d2f28>>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=HeadObject) with params: {'url_path': '/usu-cs5260-dax-web/8123f304-f23f-440b-a6d3-80e979fa4cd6', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-web/8123f304-f23f-440b-a6d3-80e979fa4cd6', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45492d20f0>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-web'}}}
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <function signal_not_transferring at 0x7f4549394d08>
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f45492d2128>>
+DEBUG:botocore.hooks:Event choose-signer.s3.HeadObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f454c4b4b70>>
+DEBUG:botocore.hooks:Event choose-signer.s3.HeadObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.HeadObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f45492d2860>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-web/8123f304-f23f-440b-a6d3-80e979fa4cd6
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-web.s3.amazonaws.com/8123f304-f23f-440b-a6d3-80e979fa4cd6
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+HEAD
+/8123f304-f23f-440b-a6d3-80e979fa4cd6
+
+host:usu-cs5260-dax-web.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050318Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050318Z
+20210310/us-east-1/s3/aws4_request
+1f963410f97d558d1544b8330638fb7bb8058703f10713a56e4e44059c4164f9
+DEBUG:botocore.auth:Signature:
+75dcde15822696241e7fd6657c3985f33caeaf39c82604dffb004b614282548c
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <function signal_transferring at 0x7f4549394d90>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=HEAD, url=https://usu-cs5260-dax-web.s3.amazonaws.com/8123f304-f23f-440b-a6d3-80e979fa4cd6, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050318Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=75dcde15822696241e7fd6657c3985f33caeaf39c82604dffb004b614282548c'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-web.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-web.s3.amazonaws.com:443 "HEAD /8123f304-f23f-440b-a6d3-80e979fa4cd6 HTTP/1.1" 404 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-request-id': 'Q2EBETGX46EHNNS4', 'x-amz-id-2': 'y+dZQzno2ZuIDTtb/N9B/UgYaanuBByeRbN+aYeljGCbRPphw82CQ76XkNevg+5FRdsW9xjHkC8=', 'Content-Type': 'application/xml', 'Date': 'Wed, 10 Mar 2021 05:03:18 GMT', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.HeadObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f45492d2c18>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.HeadObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f45492d2f28>>
+DEBUG:s3transfer.tasks:Exception raised.
+Traceback (most recent call last):
+  File "/home/daxinator22/.local/lib/python3.6/site-packages/s3transfer/tasks.py", line 255, in _main
+    self._submit(transfer_future=transfer_future, **kwargs)
+  File "/home/daxinator22/.local/lib/python3.6/site-packages/s3transfer/download.py", line 343, in _submit
+    **transfer_future.meta.call_args.extra_args
+  File "/home/daxinator22/.local/lib/python3.6/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/daxinator22/.local/lib/python3.6/site-packages/botocore/client.py", line 676, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Bucket
+DEBUG:boto3.resources.model:Renaming Bucket attribute name
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x7f454986e840>
+DEBUG:boto3.resources.collection:Calling paginated s3:list_objects with {'Bucket': 'usu-cs5260-dax-requests'}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function set_list_objects_encoding_type_url at 0x7f4549b32730>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f4548761f28>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f45487ab9b0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f4548761f28>>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ListObjects) with params: {'url_path': '/usu-cs5260-dax-requests', 'query_string': {'encoding-type': 'url'}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4548761b00>, 'has_streaming_input': False, 'auth_type': None, 'encoding_type_auto_set': True, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.ListObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4548761b38>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f45474756d8>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f45487ab048>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+GET
+/
+encoding-type=url
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050318Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050318Z
+20210310/us-east-1/s3/aws4_request
+7955dfff62b47d66c469c329067dd367933e4267d871e4d2827fc9dc1ff3f3d3
+DEBUG:botocore.auth:Signature:
+5023e4822d3cd460bd8246d8e1dbc1265012a4727867e4c65f83e34f32dc5445
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=GET, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050318Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=5023e4822d3cd460bd8246d8e1dbc1265012a4727867e4c65f83e34f32dc5445'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "GET /?encoding-type=url HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'JGGu5Gt5kvNdfF/f+gWb16oU9o7jlEB5BA38eMcyIZ7eJjzcHYwp8wRXx2lg6X4LWhopRKqFsJ8=', 'x-amz-request-id': 'QP40RPDB2NDGGMAS', 'Date': 'Wed, 10 Mar 2021 05:03:20 GMT', 'x-amz-bucket-region': 'us-east-1', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>usu-cs5260-dax-requests</Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>update_request</Key><LastModified>2021-03-10T05:03:17.000Z</LastModified><ETag>&quot;2b2566a3a3760faf591a329b9b8ca6fe&quot;</ETag><Size>160</Size><Owner><ID>e0b044761be4384461d71208435e0a82414d92f61f9f1f9c531a262017f7c869</ID><DisplayName>awslabsc0w1525286t1608472996</DisplayName></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4548761ef0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f4548761f28>>
+DEBUG:botocore.hooks:Event after-call.s3.ListObjects: calling handler <function decode_list_object at 0x7f4549b327b8>
+DEBUG:boto3.resources.factory:Loading s3:ObjectSummary
+DEBUG:boto3.resources.model:Renaming ObjectSummary attribute key
+DEBUG:botocore.hooks:Event creating-resource-class.s3.ObjectSummary: calling handler <function lazy_call.<locals>._handler at 0x7f454986e950>
+DEBUG:boto3.resources.action:Calling s3:delete_objects with {'Bucket': 'usu-cs5260-dax-requests', 'Delete': {'Objects': [{'Key': 'update_request'}]}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f4548761f28>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f45487ab9b0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObjects: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObjects: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f4548761f28>>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObjects: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=DeleteObjects) with params: {'url_path': '/usu-cs5260-dax-requests?delete', 'query_string': {}, 'method': 'POST', 'headers': {'Content-MD5': '7TgwWFbpBLEC2RQHnWhgXQ==', 'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'<Delete xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Object><Key>update_request</Key></Object></Delete>', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests?delete', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4548761b00>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.DeleteObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4548761b38>>
+DEBUG:botocore.hooks:Event choose-signer.s3.DeleteObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f45474756d8>>
+DEBUG:botocore.hooks:Event choose-signer.s3.DeleteObjects: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.DeleteObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f45487ab048>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests?delete
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/?delete
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+delete=
+content-md5:7TgwWFbpBLEC2RQHnWhgXQ==
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:8106a772273b3185dee3f8565e3ca5c5df976d8e0ac2f659b9d81d46e59dfc2d
+x-amz-date:20210310T050319Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+8106a772273b3185dee3f8565e3ca5c5df976d8e0ac2f659b9d81d46e59dfc2d
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050319Z
+20210310/us-east-1/s3/aws4_request
+14cffe0dab9af5a3ba0d823aeabede83ab0f4ee5fb55e68ae36199799e7e829f
+DEBUG:botocore.auth:Signature:
+275b62f583dc8b33df74f048d6e669d54efc3b8edfd44620a188d08483c393a0
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/?delete, headers={'Content-MD5': b'7TgwWFbpBLEC2RQHnWhgXQ==', 'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050319Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'8106a772273b3185dee3f8565e3ca5c5df976d8e0ac2f659b9d81d46e59dfc2d', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=275b62f583dc8b33df74f048d6e669d54efc3b8edfd44620a188d08483c393a0', 'Content-Length': '107'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "POST /?delete HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': '2AJuOrtMKljeBbX+v6LRbMu47Sb5iSddNAfTK7wW21MJ5WVGEPCmMIMwItZWiGNa4JZeL8N4xfI=', 'x-amz-request-id': 'QP44KEBEZNET3HG2', 'Date': 'Wed, 10 Mar 2021 05:03:20 GMT', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3', 'Connection': 'close'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<DeleteResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Deleted><Key>update_request</Key></Deleted></DeleteResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.DeleteObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4548761ef0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.DeleteObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f4548761f28>>
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': 'QP44KEBEZNET3HG2', 'HostId': '2AJuOrtMKljeBbX+v6LRbMu47Sb5iSddNAfTK7wW21MJ5WVGEPCmMIMwItZWiGNa4JZeL8N4xfI=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': '2AJuOrtMKljeBbX+v6LRbMu47Sb5iSddNAfTK7wW21MJ5WVGEPCmMIMwItZWiGNa4JZeL8N4xfI=', 'x-amz-request-id': 'QP44KEBEZNET3HG2', 'date': 'Wed, 10 Mar 2021 05:03:20 GMT', 'content-type': 'application/xml', 'transfer-encoding': 'chunked', 'server': 'AmazonS3', 'connection': 'close'}, 'RetryAttempts': 0}, 'Deleted': [{'Key': 'update_request'}]}
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Object
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Object: calling handler <function lazy_call.<locals>._handler at 0x7f454986e8c8>
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f45487d9550>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f45487d9550>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f45487d9550>}) with kwargs {'client': <botocore.client.S3 object at 0x7f45474f9978>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7f45492dcac8>, 'osutil': <s3transfer.utils.OSUtils object at 0x7f45492dc390>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7f45492d2d30>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f45487d9550>}
+DEBUG:s3transfer.futures:Submitting task PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7f45492d2d30> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task PutObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7f45474f9978>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7f4549408ba8>, 'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f4549b32158>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f4549b30598>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f4549b329d8>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f4547454a20>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f4549083588>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function conditionally_calculate_md5 at 0x7f454a127620>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f4547454a20>>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=PutObject) with params: {'url_path': '/usu-cs5260-dax-requests/delete_request', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'Content-MD5': 'YZsaSaxQbfI8hVtIubI+Yg==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x7f4549408ba8>, 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests/delete_request', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45474f99e8>, 'has_streaming_input': True, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7f4549394d08>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f45474f9f60>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f45487abc88>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f4549083390>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests/delete_request
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/delete_request
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/delete_request
+
+content-md5:YZsaSaxQbfI8hVtIubI+Yg==
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210310T050319Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050319Z
+20210310/us-east-1/s3/aws4_request
+d9c86b92c8c0879881642c44e0ab9c29b949d82ed9c899ff295ec12643e06d31
+DEBUG:botocore.auth:Signature:
+bf6cd76eca058de899e3f21405326be438b9bf4b86496e40af804f2edfdc1dea
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7f4549394d90>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/delete_request, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'Content-MD5': b'YZsaSaxQbfI8hVtIubI+Yg==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210310T050319Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=bf6cd76eca058de899e3f21405326be438b9bf4b86496e40af804f2edfdc1dea', 'Content-Length': '119'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "PUT /delete_request HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'P6EUw7tCgfhhx6ccbIR1egI4N3QBBx+r3/2urKvGCCDk9YOEm4FEVrqLE7c7MAh5eOaBcuhM49M=', 'x-amz-request-id': 'QP43D8PYEHK7Z78F', 'Date': 'Wed, 10 Mar 2021 05:03:20 GMT', 'ETag': '"619b1a49ac506df23c855b48b9b23e62"', 'Content-Length': '0', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f45474547b8>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f4547454a20>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function set_list_objects_encoding_type_url at 0x7f4549b32730>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f454c468d68>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f454c468710>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.ListObjects: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f454c468d68>>
+DEBUG:botocore.hooks:Event before-call.s3.ListObjects: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ListObjects) with params: {'url_path': '/usu-cs5260-dax-requests', 'query_string': {'encoding-type': 'url'}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45487506d8>, 'has_streaming_input': False, 'auth_type': None, 'encoding_type_auto_set': True, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.ListObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f45487506a0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f454c462c88>>
+DEBUG:botocore.hooks:Event choose-signer.s3.ListObjects: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f454c468400>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests?encoding-type=url
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+GET
+/
+encoding-type=url
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050319Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050319Z
+20210310/us-east-1/s3/aws4_request
+0524e783dd401f990516586cf4811474994de4009b48e64dce3fe9722b0acbcd
+DEBUG:botocore.auth:Signature:
+1b46c3a54afeaac0939bfd19c4f15eb26cb3398cd29b67187c3a093a3d052039
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=GET, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/?encoding-type=url, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3', 'X-Amz-Date': b'20210310T050319Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=1b46c3a54afeaac0939bfd19c4f15eb26cb3398cd29b67187c3a093a3d052039'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "GET /?encoding-type=url HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'DzZdfXKostUQBcZ8wUv4pPVSzXseqt+qEoKLlF72vj5Kwllfu2ziJNeIFW4kOQUrsA5BDwnlkx8=', 'x-amz-request-id': 'QP4FH82WCEC1TPW2', 'Date': 'Wed, 10 Mar 2021 05:03:20 GMT', 'x-amz-bucket-region': 'us-east-1', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>usu-cs5260-dax-requests</Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>delete_request</Key><LastModified>2021-03-10T05:03:20.000Z</LastModified><ETag>&quot;619b1a49ac506df23c855b48b9b23e62&quot;</ETag><Size>119</Size><Owner><ID>e0b044761be4384461d71208435e0a82414d92f61f9f1f9c531a262017f7c869</ID><DisplayName>awslabsc0w1525286t1608472996</DisplayName></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x7f454c468c88>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f454c468d68>>
+DEBUG:botocore.hooks:Event after-call.s3.ListObjects: calling handler <function decode_list_object at 0x7f4549b327b8>
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Object
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Object: calling handler <function lazy_call.<locals>._handler at 0x7f454986e8c8>
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454743b2e8>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454743b2e8>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task DownloadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454743b2e8>}) with kwargs {'client': <botocore.client.S3 object at 0x7f45474f2710>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7f454743d4a8>, 'osutil': <s3transfer.utils.OSUtils object at 0x7f454743d400>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7f454743d198>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7f454743b2e8>, 'io_executor': <s3transfer.futures.BoundedExecutor object at 0x7f4547442eb8>}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function sse_md5 at 0x7f4549b30598>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f45474f2c50>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f4547429048>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.HeadObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f45474f2c50>>
+DEBUG:botocore.hooks:Event before-call.s3.HeadObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=HeadObject) with params: {'url_path': '/usu-cs5260-dax-requests/delete_request', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests/delete_request', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45474f2908>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <function signal_not_transferring at 0x7f4549394d08>
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f45474f28d0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.HeadObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f454c46e630>>
+DEBUG:botocore.hooks:Event choose-signer.s3.HeadObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.HeadObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f45474290b8>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests/delete_request
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/delete_request
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+HEAD
+/delete_request
+
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050320Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050320Z
+20210310/us-east-1/s3/aws4_request
+61ecda05d9f5bf97465ecfd29d88d2add4643c0f7362d66af2a11308ffacb0ed
+DEBUG:botocore.auth:Signature:
+f0e5a7df014666afdc0b0c2bbd9516dd875bf5caa73f765db6975ca1648f80fd
+DEBUG:botocore.hooks:Event request-created.s3.HeadObject: calling handler <function signal_transferring at 0x7f4549394d90>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=HEAD, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/delete_request, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050320Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=f0e5a7df014666afdc0b0c2bbd9516dd875bf5caa73f765db6975ca1648f80fd'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-requests.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "HEAD /delete_request HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': '6iPf6IgCh83/Y/8RCn6a+EeBM21LiAYSL/1KzNw2dXN02kgWIZxk3PtAWB8CjMo3ap17v2gJTXc=', 'x-amz-request-id': '5KSVN2RP8ZRWCYVX', 'Date': 'Wed, 10 Mar 2021 05:03:21 GMT', 'Last-Modified': 'Wed, 10 Mar 2021 05:03:20 GMT', 'ETag': '"619b1a49ac506df23c855b48b9b23e62"', 'Accept-Ranges': 'bytes', 'Content-Type': 'binary/octet-stream', 'Content-Length': '119', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.HeadObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f45474f2c88>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.HeadObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f45474f2c50>>
+DEBUG:s3transfer.futures:Submitting task ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7f454743d198> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task ImmediatelyWriteIOGetObjectTask(transfer_id=0, {'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7f45474f2710>, 'bucket': 'usu-cs5260-dax-requests', 'key': 'delete_request', 'fileobj': <s3transfer.utils.DeferredOpenFile object at 0x7f454743bef0>, 'extra_args': {}, 'callbacks': [], 'max_attempts': 5, 'download_output_manager': <s3transfer.download.DownloadFilenameOutputManager object at 0x7f454743be10>, 'io_chunksize': 262144, 'bandwidth_limiter': None}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <function sse_md5 at 0x7f4549b30598>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f45474f2c50>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f4547429048>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.GetObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.GetObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.GetObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f45474f2c50>>
+DEBUG:botocore.hooks:Event before-call.s3.GetObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetObject) with params: {'url_path': '/usu-cs5260-dax-requests/delete_request', 'query_string': {}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-requests/delete_request', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f45474f2908>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-requests'}}}
+DEBUG:botocore.hooks:Event request-created.s3.GetObject: calling handler <function signal_not_transferring at 0x7f4549394d08>
+DEBUG:botocore.hooks:Event request-created.s3.GetObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f45474f28d0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.GetObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f454c46e630>>
+DEBUG:botocore.hooks:Event choose-signer.s3.GetObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.GetObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f45474290b8>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-requests/delete_request
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-requests.s3.amazonaws.com/delete_request
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+GET
+/delete_request
+
+host:usu-cs5260-dax-requests.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050320Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050320Z
+20210310/us-east-1/s3/aws4_request
+5e4812c9503860e5deebb293f7123ec01cd83a3f11dac00b1a6eb989f31b0993
+DEBUG:botocore.auth:Signature:
+e8261acc14221f50816a3ec0dce2f925de17d33a7dfcb99c30755cc2c34c9069
+DEBUG:botocore.hooks:Event request-created.s3.GetObject: calling handler <function signal_transferring at 0x7f4549394d90>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=True, method=GET, url=https://usu-cs5260-dax-requests.s3.amazonaws.com/delete_request, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050320Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=e8261acc14221f50816a3ec0dce2f925de17d33a7dfcb99c30755cc2c34c9069'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-requests.s3.amazonaws.com:443 "GET /delete_request HTTP/1.1" 200 119
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'bYTj1LB5ZFWx8T7igADm0ecEACcGPnxoDdeNglt5uIFfCEicv28ISl4qeQYv9CtN0C12AObu4oI=', 'x-amz-request-id': '5KSNFQCXQ4A8KY14', 'Date': 'Wed, 10 Mar 2021 05:03:21 GMT', 'Last-Modified': 'Wed, 10 Mar 2021 05:03:20 GMT', 'ETag': '"619b1a49ac506df23c855b48b9b23e62"', 'Accept-Ranges': 'bytes', 'Content-Type': 'binary/octet-stream', 'Content-Length': '119', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+<botocore.response.StreamingBody object at 0x7f45473ea198>
+DEBUG:botocore.hooks:Event needs-retry.s3.GetObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f45474f2c88>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.GetObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f45474f2c50>>
+DEBUG:s3transfer.tasks:IOWriteTask(transfer_id=0, {'offset': 0}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:IOWriteTask(transfer_id=0, {'offset': 0}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task IOWriteTask(transfer_id=0, {'offset': 0}) with kwargs {'fileobj': <s3transfer.utils.DeferredOpenFile object at 0x7f454743bef0>, 'offset': 0}
+DEBUG:s3transfer.tasks:IORenameFileTask(transfer_id=0, {'final_filename': 'json_file.txt'}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:IORenameFileTask(transfer_id=0, {'final_filename': 'json_file.txt'}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task IORenameFileTask(transfer_id=0, {'final_filename': 'json_file.txt'}) with kwargs {'fileobj': <s3transfer.utils.DeferredOpenFile object at 0x7f454743bef0>, 'final_filename': 'json_file.txt', 'osutil': <s3transfer.utils.OSUtils object at 0x7f454743d400>}
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4549f93400>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f454a03d158>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f45498c0620>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f4549fc1ea0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Object
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Object: calling handler <function lazy_call.<locals>._handler at 0x7f454986e8c8>
+DEBUG:boto3.resources.action:Calling s3:delete_object with {'Bucket': 'usu-cs5260-dax-web', 'Key': '8123f304-f23f-440b-a6d3-80e979fa4cd6'}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObject: calling handler <function validate_bucket_name at 0x7f4549b30510>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7f454743dda0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7f454743db00>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.DeleteObject: calling handler <function generate_idempotent_uuid at 0x7f4549b30378>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObject: calling handler <function add_expect_header at 0x7f4549b30840>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7f454743dda0>>
+DEBUG:botocore.hooks:Event before-call.s3.DeleteObject: calling handler <function inject_api_version_header_if_needed at 0x7f4549b32ae8>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=DeleteObject) with params: {'url_path': '/usu-cs5260-dax-web/8123f304-f23f-440b-a6d3-80e979fa4cd6', 'query_string': {}, 'method': 'DELETE', 'headers': {'User-Agent': 'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/usu-cs5260-dax-web/8123f304-f23f-440b-a6d3-80e979fa4cd6', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4547442128>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': 'usu-cs5260-dax-web'}}}
+DEBUG:botocore.hooks:Event request-created.s3.DeleteObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4547442160>>
+DEBUG:botocore.hooks:Event choose-signer.s3.DeleteObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f454c46e630>>
+DEBUG:botocore.hooks:Event choose-signer.s3.DeleteObject: calling handler <function set_operation_specific_signer at 0x7f4549b30268>
+DEBUG:botocore.hooks:Event before-sign.s3.DeleteObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7f454743d7f0>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/usu-cs5260-dax-web/8123f304-f23f-440b-a6d3-80e979fa4cd6
+DEBUG:botocore.utils:URI updated to: https://usu-cs5260-dax-web.s3.amazonaws.com/8123f304-f23f-440b-a6d3-80e979fa4cd6
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+DELETE
+/8123f304-f23f-440b-a6d3-80e979fa4cd6
+
+host:usu-cs5260-dax-web.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20210310T050320Z
+x-amz-security-token:FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=
+
+host;x-amz-content-sha256;x-amz-date;x-amz-security-token
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210310T050320Z
+20210310/us-east-1/s3/aws4_request
+018dfd7ee98be6ce0f26a5ad2f85ec3c17b03fda57ca8a080cdf3e867b9977c4
+DEBUG:botocore.auth:Signature:
+0dd3e2de08a0d9f3a70f565e34fd0b3cc7c788941315367db5cb17fc92af766f
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=DELETE, url=https://usu-cs5260-dax-web.s3.amazonaws.com/8123f304-f23f-440b-a6d3-80e979fa4cd6, headers={'User-Agent': b'Boto3/1.17.3 Python/3.6.9 Linux/4.15.0-20-generic Botocore/1.20.3 Resource', 'X-Amz-Date': b'20210310T050320Z', 'X-Amz-Security-Token': b'FwoGZXIvYXdzEFYaDHq2nA9OAmHc6zuRUCLOAejZQyXWtjGLNmimpomxxKWr6ybcMR0p53YPufkH4BtTVaFlR6ezUdx9ub80GZaCj/Jvz66xrc1E3YGEiCTr+Rtfnn+D4EjgSxkytpP5u7D559YoGZHVr60rI5eXLELrGblECGIE1u4gAkLuBJKCZdjRQB403Vsk6f3VYxb93KdXNLxNfQbfwOSkRHc3r2Kk3+UwUmm6LHGvvimu863KYL1m55cGOmMQTQW1RtXBInIiAOdNXnB4zLwFqAkNEbwCz/mePwiIq1bSgm3wuWmHKOWdoYIGMi0mYdw7+68LHOEE362d6tsX1fh8cGfwuUhzi3GMzp+Pwrxxjy9HhypuZVMhGc0=', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIAWDEPRV4OPLHLSKOI/20210310/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=0dd3e2de08a0d9f3a70f565e34fd0b3cc7c788941315367db5cb17fc92af766f', 'Content-Length': '0'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): usu-cs5260-dax-web.s3.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://usu-cs5260-dax-web.s3.amazonaws.com:443 "DELETE /8123f304-f23f-440b-a6d3-80e979fa4cd6 HTTP/1.1" 204 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'rJXQ4uEWriCuSDpswa6ILq5ttQ/1nVCcW5OD5EjlJHV9NLMGo7MAB03yjW202Ct3N+mjWKoKpFo=', 'x-amz-request-id': '4EKTMVT7DR164HJR', 'Date': 'Wed, 10 Mar 2021 05:03:22 GMT', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.DeleteObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f454743de10>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.DeleteObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7f454743dda0>>
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': '4EKTMVT7DR164HJR', 'HostId': 'rJXQ4uEWriCuSDpswa6ILq5ttQ/1nVCcW5OD5EjlJHV9NLMGo7MAB03yjW202Ct3N+mjWKoKpFo=', 'HTTPStatusCode': 204, 'HTTPHeaders': {'x-amz-id-2': 'rJXQ4uEWriCuSDpswa6ILq5ttQ/1nVCcW5OD5EjlJHV9NLMGo7MAB03yjW202Ct3N+mjWKoKpFo=', 'x-amz-request-id': '4EKTMVT7DR164HJR', 'date': 'Wed, 10 Mar 2021 05:03:22 GMT', 'server': 'AmazonS3'}, 'RetryAttempts': 0}}

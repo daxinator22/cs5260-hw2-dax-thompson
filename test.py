@@ -84,19 +84,22 @@ def s3_tests():
     method = 's3'
     to_bucket = 'usu-cs5260-dax-web'
     clear_bucket(to_bucket)
+    print('Testing S3 widget creation')
     test_create_request(from_bucket, method, to_bucket, 'create_request')
-    test_update_request(from_bucket, method, to_bucket, 'update_request')
-    test_delete_request(from_bucket, method, to_bucket, 'delete_request')
+    #test_update_request(from_bucket, method, to_bucket, 'update_request')
+    #test_delete_request(from_bucket, method, to_bucket, 'delete_request')
 
 def dynamodb_tests():
     from_bucket = 'usu-cs5260-dax-requests'
     method = 'dynamodb'
     to_bucket = 'widgets'
+    print('Testing DynamoDB  widget creation')
     test_create_request(from_bucket, method, to_bucket, 'create_request')
-    test_update_request(from_bucket, method, to_bucket, 'update_request')
+    #test_update_request(from_bucket, method, to_bucket, 'update_request')
     
     
 
 
-#s3_tests()
+s3_tests()
+print()
 dynamodb_tests()

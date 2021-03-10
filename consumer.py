@@ -24,6 +24,7 @@ def write_json_object(file_name, json_object):
     f.close()
 
 def put_object_s3(method, to_bucket, json_object, file_name):
+
     try:
         #print(f'{json_object["requestId"]} {json_object["type"][:-1]}ing {json_object["widgetId"]} in {to_bucket} using {method}')
         to_resource = boto3.resource(method)
@@ -32,7 +33,7 @@ def put_object_s3(method, to_bucket, json_object, file_name):
             del json_object['requestId']
             write_json_object(file_name, json_object)
             to_resource.Object(to_bucket, json_object['widgetId']).upload_file(file_name)
-        elif json_object['type'] == 'delete':
+            '''        elif json_object['type'] == 'delete':
             to_resource.Object(to_bucket, json_object['widgetId']).delete()
         elif json_object['type'] == 'update':
             del json_object['type']
@@ -42,7 +43,7 @@ def put_object_s3(method, to_bucket, json_object, file_name):
             json_object.update(update_object)
             write_json_object(file_name, json_object)
             to_resource.Object(to_bucket, json_object['widgetId']).upload_file(file_name)
-
+'''
     except:
         print(f'Error putting JSON object')
         
@@ -55,11 +56,11 @@ def put_object_dynamo(method, to_bucket, json_object, file_name):
     del json_object['requestId']
     if request_type == 'create':
         table.put_item(Item=json_object)
-    elif request_type == 'update':
+        ''' elif request_type == 'update':
         old_item = table.get_item(Key={'widgetId': json_object['widgetId'], 'owner': json_object['owner']})['Item']
         old_item.update(json_object)
         table.put_item(Item=old_item)
-
+'''
 
 def put_object(method, to_bucket, json, file_name):
     if method == 's3':
