@@ -1,4 +1,4 @@
-import boto3, json, consumer
+import boto3, json, consumer, Client, Errors
 
 def clear_bucket(bucket):
     resource = boto3.resource('s3')
@@ -97,9 +97,45 @@ def dynamodb_tests():
     test_create_request(from_bucket, method, to_bucket, 'create_request')
     #test_update_request(from_bucket, method, to_bucket, 'update_request')
     
+def client_test():
+    counter = 0
+    total = 0
+    try:
+        total += 1
+        from_bucket = 'usu-cs5260-dax-requests'
+        method = 's3'
+        to_bucket = 'usu-cs5260-dax-web'
+        client = Client.Client(from_bucket, method, to_bucket)
+        counter += 1
+    except:
+        print('Client creation failed')
+
+    try:
+        total += 1
+        from_bucket = 'usu-cs5260-dax-requests'
+        method = 'bad_method'
+        to_bucket = 'usu-cs5260-dax-web'
+        client = Client.Client(from_bucket, method, to_bucket)
+        print('Client created with bad method')
+    except Errors.UnknownClientMethod:
+        counter += 1
+
+    try:
+        total += 1
+        from_bucket = 'bad_from_bucket'
+        method = 's3'
+        to_bucket = 'usu-cs5260-dax-web'
+        client = Client.Client(from_bucket, method, to_bucket)
+        client.process_next_request()
+        print('Client found from_bucket that does not exist')
+    except Errors.BucketNotFound:
+        counter += 1
+
+    print(f'Client test: {counter} out of {total} passed')
     
 
 
-s3_tests()
-print()
-dynamodb_tests()
+#s3_tests()
+#print()
+#dynamodb_tests()
+client_test()

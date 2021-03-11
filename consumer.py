@@ -24,7 +24,6 @@ def write_json_object(file_name, json_object):
     f.close()
 
 def put_object_s3(method, to_bucket, json_object, file_name):
-    logging.basicConfig(filename='log.log', level=logging.INFO)
 
     try:
         #print(f'{json_object["requestId"]} {json_object["type"][:-1]}ing {json_object["widgetId"]} in {to_bucket} using {method}')
@@ -75,6 +74,7 @@ def put_object(method, to_bucket, json, file_name):
 
 
 def connect(from_bucket, method, to_bucket):
+    logging.basicConfig(filename='log.log', level=logging.INFO)
     requests = None
     try:
         from_client = boto3.client('s3')
@@ -91,7 +91,7 @@ def connect(from_bucket, method, to_bucket):
         os.remove(file_name)
 
 
-#if len(argv) < 4:
-    #print('Usage: consumer.py bucket_1 method bucket_2')
-#else:
-    #connect(argv[1], argv[2], argv[3])
+if len(argv) < 4:
+    print('Usage: consumer.py bucket_1 method bucket_2')
+else:
+    connect(argv[1], argv[2], argv[3])
