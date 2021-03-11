@@ -131,6 +131,28 @@ def client_test():
     except Errors.BucketNotFound:
         counter += 1
 
+    try:
+        total += 1
+        from_bucket = 'usu-cs5260-dax-requests'
+        method = 's3'
+        to_bucket = 'bad_to_bucket'
+        client = Client.Client(from_bucket, method, to_bucket)
+        client.process_next_request()
+        print('Client found to_bucket that does not exist')
+    except Errors.BucketNotFound:
+        counter += 1
+
+    try:
+        total += 1
+        from_bucket = 'usu-cs5260-dax-requests'
+        method = 'dynamodb'
+        to_bucket = 'bad_to_bucket'
+        client = Client.Client(from_bucket, method, to_bucket)
+        client.process_next_request()
+        print('Client found to_bucket that does not exist')
+    except Errors.BucketNotFound:
+        counter += 1
+
     print(f'Client test: {counter} out of {total} passed')
     
 
