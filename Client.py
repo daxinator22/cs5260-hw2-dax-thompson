@@ -1,4 +1,4 @@
-import boto3, Request, S3_Widget, DynamoDB_Widget
+import boto3, Request, S3_Widget, DynamoDB_Widget, time
 from Errors import UnknownClientMethod, BucketNotFound
 from botocore.exceptions import UnknownServiceError, ClientError
 
@@ -16,7 +16,12 @@ class Client():
             raise UnknownClientMethod(f'{self.method} is not supported')
 
     def process_next_request(self):
-        request = self.get_request()
+        try:
+            request = self.get_request()
+        except KeyError:
+            time.sleep(0.1)
+            return
+
         if request.type == 'create':
             self.put_widget(request.content)
 
@@ -28,6 +33,8 @@ class Client():
             return request
         except ClientError:
             raise BucketNotFound(f'{self.from_bucket} does not exist')
+        except KeyError:
+            raise KeyError
 
 
     def put_widget(self, content):
