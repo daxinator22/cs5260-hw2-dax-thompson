@@ -16,17 +16,18 @@ class Client():
             raise UnknownClientMethod(f'{self.method} is not supported')
 
     def process_next_request(self):
+        request = self.get_request()
+        if request.type == 'create':
+            self.put_widget(request.content)
+
+    def get_request(self):
         try:
             request_object = self.from_client.list_objects(Bucket=self.from_bucket, MaxKeys=1)['Contents'][0]
             request = Request.Request(request_object['Key'], self.from_client.get_object(Bucket=self.from_bucket, Key=request_object['Key'])['Body'].read().decode('utf-8'))
-            if request.type == 'create':
-
-                self.put_widget(request.content)
-
             self.from_client.delete_object(Bucket=self.from_bucket, Key=request.key)
+            return request
         except ClientError:
             raise BucketNotFound(f'{self.from_bucket} does not exist')
-
 
 
     def put_widget(self, content):
