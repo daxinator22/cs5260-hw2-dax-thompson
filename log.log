@@ -1,0 +1,22 @@
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request test-request for widget 8123f304-f23f-440b-a6d3-80e979fa4cd6 at 2021-03-13 00:57:40.538735
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request test-request at 2021-03-13 01:00:10.178579
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request test-request at 2021-03-13 01:01:58.989983
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request test-request at 2021-03-13 01:04:00.924310
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request test-request at 2021-03-13 01:05:30.977682
+INFO:root:Processing widget 8123f304-f23f-440b-a6d3-80e979fa4cd6 at 2021-03-13 01:05:31.069777
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request test-request at 2021-03-13 01:06:57.204354
+INFO:root:Processing widget 8123f304-f23f-440b-a6d3-80e979fa4cd6 at 2021-03-13 01:06:57.992836
+INFO:root:Processing create request test-request at 2021-03-13 01:06:59.532874
+INFO:root:Processing create request test-request at 2021-03-13 01:07:00.775864
+INFO:root:Processing widget 8123f304-f23f-440b-a6d3-80e979fa4cd6 at 2021-03-13 01:07:00.862569
