@@ -1,7 +1,6 @@
-import boto3, Request, Widget
+import boto3, Request, S3_Widget, DynamoDB_Widget
 from Errors import UnknownClientMethod, BucketNotFound
 from botocore.exceptions import UnknownServiceError, ClientError
-from botocore.errorfactory import ResourceNotFoundException
 
 class Client():
 
@@ -34,13 +33,13 @@ class Client():
         if self.method == 's3':
             try:
                 widget = S3_Widget.S3_Widget(content)
-                self.to_client.put_object(Bucket=self.to_bucket, Key=f'{widget.owner}/{widget.key}', Body=bytes(widget.content), 'utf-8'))
+                self.to_client.put_object(Bucket=self.to_bucket, Key=f'{widget.owner}/{widget.key}', Body=bytes(widget.content, 'utf-8'))
             except ClientError:
                 raise BucketNotFound(f'{self.to_bucket} does not exist')
 
         elif self.method == 'dynamodb':
             try:
                 widget = DynamoDB_Widget.DynamoDB_Widget(content)
-                self.to_client.Table(self.to_bucket).put_item(Item=widget.content)
-            except ResourceNotFoundException:
+                self.to_client.put_item(TableName=self.to_bucket, Item=widget.content)
+            except:
                 raise BucketNotFound(f'{self.to_bucket} does not exist')
