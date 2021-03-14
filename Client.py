@@ -32,7 +32,7 @@ class Client():
             request_object = self.from_client.list_objects(Bucket=self.from_bucket, MaxKeys=1)['Contents'][0]
             request = Request.Request(request_object['Key'], self.from_client.get_object(Bucket=self.from_bucket, Key=request_object['Key'])['Body'].read().decode('utf-8'))
             logging.info(f'Processing create request {request.key} at {datetime.datetime.now()}')
-            print(f'Processing create request {request.key} at {datetime.datetime.now()}')
+            print(f'Processing {request.type} request {request.key} at {datetime.datetime.now()}')
             self.from_client.delete_object(Bucket=self.from_bucket, Key=request.key)
             return request
         except ClientError:
