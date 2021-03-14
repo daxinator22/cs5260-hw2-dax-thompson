@@ -54,6 +54,7 @@ class Client():
         elif self.method == 'dynamodb':
             try:
                 widget = DynamoDB_Widget.DynamoDB_Widget(content)
+                logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
                 print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
                 self.to_client.put_item(TableName=self.to_bucket, Item=widget.content)
             except:
