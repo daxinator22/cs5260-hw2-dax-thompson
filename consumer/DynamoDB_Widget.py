@@ -32,3 +32,6 @@ class DynamoDB_Widget(Widget.Widget):
     def __init__(self, content):
         super().__init__(content)
         self.convert_content()
+
+    def create_widget(self, client, destination):
+        client.put_item(TableName=destination, Item=self.content)

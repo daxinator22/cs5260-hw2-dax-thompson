@@ -11,9 +11,14 @@ class Client():
         self.destination = destination
 
         self.types = {
-            'create' : self.put_widget,
+            'create' : self.create_widget,
             'update' : self.update_widget,
             'delete' : self.delete_widget,
+        }
+
+        self.widget_types = {
+            's3': S3_Widget.S3_Widget,
+            'dynamodb': DynamoDB_Widget.DynamoDB_Widget,
         }
 
         self.queue_client = boto3.client('s3')
@@ -29,7 +34,6 @@ class Client():
         except KeyError:
             time.sleep(0.1)
             return
-            
 
         self.types[request.type](request.content)
 
@@ -55,21 +59,16 @@ class Client():
         return
 
 
-    def put_widget(self, content):
-        if self.method == 's3':
-            try:
-                widget = S3_Widget.S3_Widget(content)
-                logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                self.to_client.put_object(Bucket=self.destination, Key=f'{widget.owner}/{widget.key}', Body=bytes(widget.content, 'utf-8'))
-            except ClientError:
-                raise BucketNotFound(f'{self.destination} does not exist')
+    def create_widget(self, content):
+        #Creates Widget instance based on method
+        widget = self.widget_types[self.method](content)
 
-        elif self.method == 'dynamodb':
-            try:
-                widget = DynamoDB_Widget.DynamoDB_Widget(content)
-                logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                self.to_client.put_item(TableName=self.destination, Item=widget.content)
-            except:
-                raise BucketNotFound(f'{self.destination} does not exist')
+        try:
+            logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
+            print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
+
+            #Calls parent create_widget method
+            widget.create_widget(self.to_client, self.destination)
+        except ClientError:
+            raise BucketNotFound(f'{self.destination} does not exist')
+
