@@ -50,3 +50,56 @@ INFO:root:Processing create request 6041392a-9052-4958-bdeb-68774e5fc55f at 2021
 INFO:root:Processing widget 69f613e6-24b9-466e-b276-32471834212d at 2021-03-27 21:39:59.786724
 INFO:root:Processing create request 6f079ca6-5581-4430-92d7-a94e70364991 at 2021-03-27 21:40:00.118975
 INFO:root:Processing widget bd4fadda-fd7d-4bfd-a5b9-2b7a62cbeeb8 at 2021-03-27 21:40:00.119849
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request 770c22fb-11f8-4957-8fb7-035f9e5c06a9 at 2021-03-27 21:47:38.211117
+INFO:root:Processing widget 37757822-19af-40d4-bb0d-ddced701f2e6 at 2021-03-27 21:47:38.211817
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request 2e14e7a5-21e0-4ad8-9d19-1ae98cf3c29a at 2021-03-27 21:48:34.156247
+INFO:root:Processing widget bb6d7d0f-be6f-425e-90a6-035fb4f07b9a at 2021-03-27 21:48:34.156850
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request eccbc792-a9aa-4a99-ab64-f135c56ee10b at 2021-03-27 21:54:32.624101
+INFO:root:Processing widget 16512718-fc5d-4283-9c6a-243c006f5a6e at 2021-03-27 21:54:32.624705
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request 8a3a96b8-b338-4893-9715-df3230c72bf3 at 2021-03-27 21:55:09.002726
+INFO:root:Processing widget 19a014bd-2f7b-4f82-a8d7-f58a7a78a132 at 2021-03-27 21:55:09.003710
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request 127e6239-3f2f-46d5-b1ca-31065b0ab9db at 2021-03-27 21:56:22.232803
+INFO:root:Processing widget 1ebf7108-b9b0-457f-9e9f-ae9c012cae46 at 2021-03-27 21:56:22.233721
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request 7b5041a1-3077-4f4e-8f5f-eabd1ec1fd07 at 2021-03-27 21:56:59.311524
+INFO:root:Processing create request dd5c608f-e1ba-4d4e-b014-0313b03a8efe at 2021-03-27 21:56:59.466344
+INFO:root:Processing create request c5c5379e-ab37-4d00-a82a-2d04f87cda89 at 2021-03-27 21:56:59.616725
+INFO:root:Processing widget efd3cb49-9956-4ae9-b223-f46d441eb790 at 2021-03-27 21:56:59.617329
+INFO:root:Processing create request 82e4e5b2-c736-4fc8-87ce-040c79626434 at 2021-03-27 21:57:00.133466
+INFO:root:Processing widget 458099e7-b227-4232-aad5-f7349afcbda4 at 2021-03-27 21:57:00.134324
+INFO:root:Processing create request 006925df-3661-45e5-8bb7-7eff49656e0e at 2021-03-27 21:57:00.363750
+INFO:root:Processing widget 59cedd38-a9f5-4174-bf4e-ad2c1daf8aaa at 2021-03-27 21:57:00.364639
+INFO:root:Processing create request 7a96952d-6684-4d63-a27e-05e111d8d1eb at 2021-03-27 21:57:00.590200
+INFO:root:Processing widget 8c678619-b8e7-42fb-987e-f3604685cee8 at 2021-03-27 21:57:00.590739
+INFO:root:Processing create request 34507b48-3e81-4b11-8b97-cce3393fcfc6 at 2021-03-27 21:57:00.828036
+INFO:root:Processing widget fcc713a0-ca39-46fa-94a8-d6a26ca1ff50 at 2021-03-27 21:57:00.828619
+INFO:root:Processing create request 079e88cb-f0a8-434f-9dda-7eef4c1ffd6c at 2021-03-27 21:57:01.078473
+INFO:root:Processing widget 585ce276-7362-4806-a069-1e41151fffcb at 2021-03-27 21:57:01.079364
+INFO:root:Processing create request 39ba545d-474f-47f7-921a-aa460e088ca8 at 2021-03-27 21:57:01.316487
+INFO:root:Processing widget 605a29c7-3f4b-488e-89b4-2be307d1d63b at 2021-03-27 21:57:01.317323
+INFO:root:Processing create request 41076f0e-94a1-4e23-95d8-08a3267f3ac8 at 2021-03-27 21:57:01.646030
+INFO:root:Processing widget 069157d1-7d41-4a2f-bdbc-152fb5597763 at 2021-03-27 21:57:01.646742
+INFO:root:Processing create request 558eef4a-bcff-4df7-9ff5-603d932b7b42 at 2021-03-27 21:57:01.877972
+INFO:root:Processing widget fb08d620-e0fb-476e-bcb0-a940c35fb74a at 2021-03-27 21:57:01.878523
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request e194aa70-a895-42d4-bca8-0f385c756e3a at 2021-03-27 21:57:06.372814
+INFO:root:Processing widget d767a102-daa7-42bc-a363-13f7a48f0550 at 2021-03-27 21:57:06.373790
+INFO:root:Processing create request 5a02bdb7-1409-41ef-bde5-dd904bc4423f at 2021-03-27 21:57:06.878549
+INFO:root:Processing widget dc6d7921-9805-480b-a30f-a9a86870d8b2 at 2021-03-27 21:57:06.879144
+INFO:root:Processing create request 4408008e-69e9-4f36-8b37-fb6604f010b1 at 2021-03-27 21:57:07.178708
+INFO:root:Processing widget 843a4fb3-eeb7-4875-a53f-e388c004cdec at 2021-03-27 21:57:07.179273
+INFO:root:Processing create request eeb7063d-c86d-4750-a1a2-22da42abbfef at 2021-03-27 21:57:07.415698
+INFO:root:Processing widget 0613aac9-fa71-4ee6-a012-5991605902fe at 2021-03-27 21:57:07.416562
+INFO:root:Processing create request 32db4c3c-f187-48c3-a8ca-f5259999413c at 2021-03-27 21:57:07.643503
+INFO:root:Processing create request d8264894-1051-436a-a5e2-f759215a2575 at 2021-03-27 21:57:07.808840
+INFO:root:Processing create request c6f4f0be-82b2-471f-8ffe-804318eb9ac7 at 2021-03-27 21:57:07.966531
+INFO:root:Processing widget 7ace0958-e027-43a1-a559-ed5b9c6da9f5 at 2021-03-27 21:57:07.967430
+INFO:root:Processing create request f7662b4b-560b-4294-a184-b88fb2749644 at 2021-03-27 21:57:08.294869
+INFO:root:Processing widget ae5e98db-8638-4791-8b2a-49dc986c65af at 2021-03-27 21:57:08.295723
+INFO:root:Processing create request d2a7181b-5c72-4aea-a86a-2ad57a01b633 at 2021-03-27 21:57:08.533640
+INFO:root:Processing widget a2437c47-f7df-4157-a63e-7e591df02571 at 2021-03-27 21:57:08.534488

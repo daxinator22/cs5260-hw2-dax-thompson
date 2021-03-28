@@ -47,18 +47,28 @@ class Client():
     def put_widget(self, content):
         if self.method == 's3':
             try:
+                #Create widget
                 widget = S3_Widget.S3_Widget(content)
+
+                #Logging info
                 logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
                 print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                self.destination_client.put_object(Bucket=self.destination, Key=f'{widget.owner}/{widget.key}', Body=bytes(widget.content, 'utf-8'))
+
+                #Process widget
+                widget.create_widget(self.destination_client, self.destination)
             except ClientError:
                 raise BucketNotFound(f'{self.destination} does not exist')
 
         elif self.method == 'dynamodb':
             try:
+                #Create widget
                 widget = DynamoDB_Widget.DynamoDB_Widget(content)
+
+                #Logging info
                 logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
                 print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                self.destination_client.put_item(TableName=self.destination, Item=widget.content)
+
+                #Process widget
+                widget.create_widget(self.destination_client, self.destination)
             except:
-                raise BucketNotFound(f'{self.destintation} does not exist')
+                raise BucketNotFound(f'{self.destination} does not exist')

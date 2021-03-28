@@ -8,3 +8,12 @@ class S3_Widget(Widget.Widget):
 
     def content_to_string(self):
         self.content = json.dumps(self.content)
+
+    def create_widget(self, client, destination):
+        self.client.put_object(Bucket=destination, Key=f'{self.owner}/{self.key}', Body=bytes(self.content, 'utf-8'))
+
+    def delete_wiget():
+        return
+
+    def update_widget():
+        return
