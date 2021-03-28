@@ -10,6 +10,17 @@ class Client():
         self.method = method
         self.destination = destination
 
+        self.request_type = {
+            'create' : self.create_widget,
+            'delete' : self.delete_widget,
+            'update' : self.update_widget,
+        }
+
+        self.instant_widget = {
+            's3' : S3_Widget.S3_Widget,
+            'dynamodb' : DynamoDB_Widget.DynamoDB_Widget,
+        }
+
         self.queue_client = boto3.client('sqs')
         try:
             self.destination_client = boto3.client(self.method)
@@ -24,8 +35,7 @@ class Client():
             time.sleep(0.1)
             return
 
-        if request.type == 'create':
-            self.put_widget(request.content)
+        self.handle_widget(request)
 
     def get_request(self):
         try:
@@ -44,31 +54,25 @@ class Client():
             raise KeyError
 
 
-    def put_widget(self, content):
-        if self.method == 's3':
-            try:
-                #Create widget
-                widget = S3_Widget.S3_Widget(content)
+    def handle_widget(self, request):
+        try:
+            #Create widget
+            widget = self.instant_widget[self.method](request.content)
 
-                #Logging info
-                logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
+            #Logging info
+            logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
+            print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
 
-                #Process widget
-                widget.create_widget(self.destination_client, self.destination)
-            except ClientError:
-                raise BucketNotFound(f'{self.destination} does not exist')
+            #Process widget
+            self.request_type[request.type](widget)
+        except ClientError:
+            raise BucketNotFound(f'{self.destination} does not exist')
 
-        elif self.method == 'dynamodb':
-            try:
-                #Create widget
-                widget = DynamoDB_Widget.DynamoDB_Widget(content)
+    def create_widget(self, widget):
+            widget.create_widget(self.destination_client, self.destination)
 
-                #Logging info
-                logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
+    def delete_widget(self, widget):
+            widget.delete_widget(self.destination_client, self.destination)
 
-                #Process widget
-                widget.create_widget(self.destination_client, self.destination)
-            except:
-                raise BucketNotFound(f'{self.destination} does not exist')
+    def update_widget(self, widget):
+            widget.update_widget(self.destination_client, self.destination)

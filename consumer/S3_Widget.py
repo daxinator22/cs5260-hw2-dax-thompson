@@ -10,10 +10,10 @@ class S3_Widget(Widget.Widget):
         self.content = json.dumps(self.content)
 
     def create_widget(self, client, destination):
-        self.client.put_object(Bucket=destination, Key=f'{self.owner}/{self.key}', Body=bytes(self.content, 'utf-8'))
+        client.put_object(Bucket=destination, Key=f'{self.owner}/{self.key}', Body=bytes(self.content, 'utf-8'))
 
-    def delete_wiget():
+    def delete_wiget(self, client, destination):
         return
 
-    def update_widget():
+    def update_widget(self, client, destination):
         return

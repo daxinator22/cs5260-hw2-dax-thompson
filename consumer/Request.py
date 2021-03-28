@@ -19,7 +19,10 @@ def get_request(client, queue):
     request_object = message['Body']
 
     #Creates request object
-    request = Request(request_object)
+    try:
+        request = Request(request_object)
+    except json.decoder.JSONDecodeError:
+        print(message)
 
     #Deletes request
     client.delete_message(QueueUrl=queue, ReceiptHandle=message['ReceiptHandle'])
