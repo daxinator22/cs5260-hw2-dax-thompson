@@ -10,7 +10,7 @@ class Client():
         self.method = method
         self.to_bucket = to_bucket
 
-        self.from_client = boto3.client('s3')
+        self.from_client = boto3.client('sqs')
         try:
             self.to_client = boto3.client(self.method)
         except UnknownServiceError:
@@ -29,12 +29,22 @@ class Client():
 
     def get_request(self):
         try:
-            request_object = self.from_client.list_objects(Bucket=self.from_bucket, MaxKeys=1)['Contents'][0]
-            request = Request.Request(request_object['Key'], self.from_client.get_object(Bucket=self.from_bucket, Key=request_object['Key'])['Body'].read().decode('utf-8'))
-            logging.info(f'Processing create request {request.key} at {datetime.datetime.now()}')
-            print(f'Processing {request.type} request {request.key} at {datetime.datetime.now()}')
-            self.from_client.delete_object(Bucket=self.from_bucket, Key=request.key)
+            #Receives message from queue
+            message = self.from_client.receive_message(QueueUrl=self.from_bucket)['Messages'][0]
+            request_object = message['Body']
+
+            #Creates request object
+            request = Request.Request(request_object)
+            
+            #Deletes request
+            self.from_client.delete_message(QueueUrl=self.from_bucket, ReceiptHandle=message['ReceiptHandle'])
+
+            #Logging info
+            logging.info(f'Processing create request {request.requestId} at {datetime.datetime.now()}')
+            print(f'Processing {request.type} request {request.requestId} at {datetime.datetime.now()}')
+
             return request
+
         except ClientError:
             raise BucketNotFound(f'{self.from_bucket} does not exist')
         except KeyError:
