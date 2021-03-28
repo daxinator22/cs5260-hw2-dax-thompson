@@ -12,3 +12,18 @@ class Request():
         del json_object['requestId']
 
         self.content = json_object
+
+def get_request(client, queue):
+    #Receives message from queue
+    message = client.receive_message(QueueUrl=queue)['Messages'][0]
+    request_object = message['Body']
+
+    #Creates request object
+    request = Request(request_object)
+
+    #Deletes request
+    client.delete_message(QueueUrl=queue, ReceiptHandle=message['ReceiptHandle'])
+    
+    return request
+
+

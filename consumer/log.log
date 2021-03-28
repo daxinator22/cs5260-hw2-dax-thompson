@@ -29,3 +29,24 @@ INFO:root:Processing create request 7cbd52d9-7f22-468f-b85e-39a722f5ec60 at 2021
 INFO:root:Processing widget 0e10a089-d58d-4947-9f17-8e903324940a at 2021-03-27 21:32:22.339027
 INFO:root:Processing create request 72593dc0-e3f4-4fef-a6aa-bfbf258659e0 at 2021-03-27 21:32:22.665300
 INFO:root:Processing widget 5f790bc4-59c0-44fa-89a9-10496b5e29ba at 2021-03-27 21:32:22.665937
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Processing create request 5ad6a7eb-7a1b-4d2c-a9d1-1aa20b67edab at 2021-03-27 21:39:56.420394
+INFO:root:Processing widget 44b00bbb-2f47-44db-a131-c273092897f3 at 2021-03-27 21:39:56.421336
+INFO:root:Processing create request f950e08a-b844-41fa-90d2-d72323eb89cd at 2021-03-27 21:39:57.019775
+INFO:root:Processing widget fc50c8ce-a3f4-4e68-b338-2479eb183962 at 2021-03-27 21:39:57.020672
+INFO:root:Processing create request 26045add-4c3c-442b-9bf4-b5fbd19a22d1 at 2021-03-27 21:39:57.344720
+INFO:root:Processing widget c5e44793-5cb5-46cc-941f-ab088703988b at 2021-03-27 21:39:57.345586
+INFO:root:Processing create request 93bacff1-da4b-4a8e-830b-52cfda8eb1ba at 2021-03-27 21:39:57.666527
+INFO:root:Processing widget 03f9ae0d-233e-45f2-b9b0-e29dc7d68a4b at 2021-03-27 21:39:57.667516
+INFO:root:Processing create request d07b2c4f-2540-4541-a13c-3e3785f252e2 at 2021-03-27 21:39:57.989148
+INFO:root:Processing widget f1d6c33f-d3ab-4442-a42e-e2ea817ca1e3 at 2021-03-27 21:39:57.989828
+INFO:root:Processing create request f7be8cf9-cb80-4e4c-ace6-1cf815d80c65 at 2021-03-27 21:39:58.316353
+INFO:root:Processing widget 3bea4da7-7bde-4ac1-ac28-a9624f3921a7 at 2021-03-27 21:39:58.317331
+INFO:root:Processing create request 5fefa07e-2520-4565-930c-1fec1cf9b6c4 at 2021-03-27 21:39:59.014073
+INFO:root:Processing widget 784cb88c-1554-4294-bd88-9eb84b97743b at 2021-03-27 21:39:59.014957
+INFO:root:Processing create request 755793f7-eed5-4bde-b208-efec8608e1f1 at 2021-03-27 21:39:59.350288
+INFO:root:Processing widget c6ee8f94-7fd7-4196-968c-ad43c9fa9468 at 2021-03-27 21:39:59.351213
+INFO:root:Processing create request 6041392a-9052-4958-bdeb-68774e5fc55f at 2021-03-27 21:39:59.785840
+INFO:root:Processing widget 69f613e6-24b9-466e-b276-32471834212d at 2021-03-27 21:39:59.786724
+INFO:root:Processing create request 6f079ca6-5581-4430-92d7-a94e70364991 at 2021-03-27 21:40:00.118975
+INFO:root:Processing widget bd4fadda-fd7d-4bfd-a5b9-2b7a62cbeeb8 at 2021-03-27 21:40:00.119849

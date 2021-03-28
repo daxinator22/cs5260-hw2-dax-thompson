@@ -29,15 +29,8 @@ class Client():
 
     def get_request(self):
         try:
-            #Receives message from queue
-            message = self.queue_client.receive_message(QueueUrl=self.queue)['Messages'][0]
-            request_object = message['Body']
-
-            #Creates request object
-            request = Request.Request(request_object)
-            
-            #Deletes request
-            self.queue_client.delete_message(QueueUrl=self.queue, ReceiptHandle=message['ReceiptHandle'])
+            #Gets request
+            request = Request.get_request(self.queue_client, self.queue)
 
             #Logging info
             logging.info(f'Processing create request {request.requestId} at {datetime.datetime.now()}')
