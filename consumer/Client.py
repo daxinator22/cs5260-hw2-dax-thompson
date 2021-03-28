@@ -4,15 +4,15 @@ from botocore.exceptions import UnknownServiceError, ClientError
 
 class Client():
 
-    def __init__(self, from_bucket, method, to_bucket):
+    def __init__(self, queue, method, destination):
         logging.basicConfig(filename='log.log', level=logging.INFO)
-        self.from_bucket = from_bucket
+        self.queue = queue
         self.method = method
-        self.to_bucket = to_bucket
+        self.destination = destination
 
-        self.from_client = boto3.client('sqs')
+        self.queue_client = boto3.client('sqs')
         try:
-            self.to_client = boto3.client(self.method)
+            self.destination_client = boto3.client(self.method)
         except UnknownServiceError:
             raise UnknownClientMethod(f'{self.method} is not supported')
 
@@ -30,14 +30,14 @@ class Client():
     def get_request(self):
         try:
             #Receives message from queue
-            message = self.from_client.receive_message(QueueUrl=self.from_bucket)['Messages'][0]
+            message = self.queue_client.receive_message(QueueUrl=self.queue)['Messages'][0]
             request_object = message['Body']
 
             #Creates request object
             request = Request.Request(request_object)
             
             #Deletes request
-            self.from_client.delete_message(QueueUrl=self.from_bucket, ReceiptHandle=message['ReceiptHandle'])
+            self.queue_client.delete_message(QueueUrl=self.queue, ReceiptHandle=message['ReceiptHandle'])
 
             #Logging info
             logging.info(f'Processing create request {request.requestId} at {datetime.datetime.now()}')
@@ -46,7 +46,7 @@ class Client():
             return request
 
         except ClientError:
-            raise BucketNotFound(f'{self.from_bucket} does not exist')
+            raise BucketNotFound(f'{self.queue} does not exist')
         except KeyError:
             raise KeyError
 
@@ -57,15 +57,15 @@ class Client():
                 widget = S3_Widget.S3_Widget(content)
                 logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
                 print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                self.to_client.put_object(Bucket=self.to_bucket, Key=f'{widget.owner}/{widget.key}', Body=bytes(widget.content, 'utf-8'))
+                self.destination_client.put_object(Bucket=self.destination, Key=f'{widget.owner}/{widget.key}', Body=bytes(widget.content, 'utf-8'))
             except ClientError:
-                raise BucketNotFound(f'{self.to_bucket} does not exist')
+                raise BucketNotFound(f'{self.destination} does not exist')
 
         elif self.method == 'dynamodb':
             try:
                 widget = DynamoDB_Widget.DynamoDB_Widget(content)
                 logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
                 print(f'Processing widget {widget.key} at {datetime.datetime.now()}')
-                self.to_client.put_item(TableName=self.to_bucket, Item=widget.content)
+                self.destination_client.put_item(TableName=self.destination, Item=widget.content)
             except:
-                raise BucketNotFound(f'{self.to_bucket} does not exist')
+                raise BucketNotFound(f'{self.destintation} does not exist')
