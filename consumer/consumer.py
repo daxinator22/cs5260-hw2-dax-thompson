@@ -1,4 +1,4 @@
-from sys import argv
+from sys import argv, exit
 import Client
 
 if len(argv) < 4:
@@ -6,4 +6,9 @@ if len(argv) < 4:
 else:
     client = Client.Client(argv[1], argv[2], argv[3])
     while True:
-        client.process_next_request()
+        try:
+            client.process_next_request()
+
+        except KeyboardInterrupt:
+            print('consumer.py interrupted by user')
+            exit()

@@ -43,7 +43,7 @@ class Client():
             request = Request.get_request(self.queue_client, self.queue)
 
             #Logging info
-            logging.info(f'Processing create request {request.requestId} at {datetime.datetime.now()}')
+            logging.info(f'Processing {request.type} request {request.requestId} at {datetime.datetime.now()}')
             print(f'Processing {request.type} request {request.requestId} at {datetime.datetime.now()}')
 
             return request
