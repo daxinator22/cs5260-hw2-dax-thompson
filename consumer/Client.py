@@ -53,11 +53,15 @@ class Client():
         except KeyError:
             raise KeyError
 
+    def convert_request_to_widget(self, request):
+        widget = self.instant_widget[self.method](request.content)
+        return widget
+
 
     def handle_widget(self, request):
         try:
             #Create widget
-            widget = self.instant_widget[self.method](request.content)
+            widget = self.convert_request_to_widget(request)
 
             #Logging info
             logging.info(f'Processing widget {widget.key} at {datetime.datetime.now()}')
