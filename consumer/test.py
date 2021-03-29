@@ -73,6 +73,29 @@ class ConsumerUnitTests(unittest.TestCase):
         self.assertEqual(widget.content['size-unit'], {'S' : 'cm'})
 
 
+    def test_convert_request_s3(self):
+        queue_url = 'https://queue.amazonaws.com/419060363036/cs5260-requests'
+        method = 's3'
+        destination = 'usu-cs5260-dax-web'
+
+        #Creates client
+        client = Client.Client(queue_url, method, destination)
+
+        #Creates request
+        test_request = dict()
+        test_request['type'] = 'create'
+        test_request['requestId'] = '12345'
+        test_request['widgetId'] = '12345'
+        test_request['owner'] = 'Test'
+        request = Request.Request(json.dumps(test_request))
+
+        #Converts request to widget
+        widget = client.convert_request_to_widget(request)
+
+        self.assertEqual(widget.content, '{"widgetId": "12345", "owner": "Test"}')
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

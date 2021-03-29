@@ -1088,3 +1088,5 @@ INFO:root:Processing create request dee481f1-5eaf-4ea5-bd60-848c3dd737bc at 2021
 INFO:root:Processing widget 729d8ab0-9fca-4bf2-a1e6-735333ce0e6b at 2021-03-29 12:14:19.215361
 INFO:root:Processing update request 4f28e7a0-7246-4913-a722-12093f002175 at 2021-03-29 12:14:19.447919
 INFO:root:Processing widget 1bf4a081-9418-45b6-b8e4-5c8090310f3e at 2021-03-29 12:14:19.448548
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
