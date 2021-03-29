@@ -1,4 +1,4 @@
-import unittest, boto3, json, time, Client, Request, DynamoDB_Widget
+import unittest, boto3, json, time, Client, Request, DynamoDB_Widget, S3_Widget
 from botocore.exceptions import ClientError
 
 class ConsumerUnitTests(unittest.TestCase):
@@ -94,6 +94,81 @@ class ConsumerUnitTests(unittest.TestCase):
 
         self.assertEqual(widget.content, '{"widgetId": "12345", "owner": "Test"}')
 
+
+    def test_update_widget_s3(self):
+        queue_url = 'https://queue.amazonaws.com/419060363036/cs5260-requests'
+        method = 's3'
+        destination = 'usu-cs5260-dax-web'
+
+        s3_client = boto3.client('s3')
+
+        #Creates client
+        client = Client.Client(queue_url, method, destination)
+
+        #Creates sample object
+        test_dict = dict()
+        test_dict['widgetId'] = '12345'
+        test_dict['owner'] = 'test'
+        test_dict['label'] = 'another test'
+
+        #Puts object in bucket
+        s3_client.put_object(Bucket=destination, Body=bytes(json.dumps(test_dict), 'utf-8'), Key=f'{test_dict["owner"]}/{test_dict["widgetId"]}')
+
+        #Changes dictionary
+        del test_dict['label']
+        test_dict['description'] = 'yet another test'
+
+        #Updates object in S3
+        widget = S3_Widget.S3_Widget(test_dict)
+        widget.update_widget(s3_client, destination)
+
+        #Gets updated object from S3
+        return_object = s3_client.get_object(Bucket=destination, Key=f'{test_dict["owner"]}/{test_dict["widgetId"]}')
+        updated_object = json.loads(return_object['Body'].read())
+
+        #Compares the dictionaries
+        test_dict['label'] = 'another test'
+        self.assertEqual(updated_object, test_dict)
+
+        #Deletes test object in S3
+        s3_client.delete_object(Bucket=destination, Key=f'{test_dict["owner"]}/{test_dict["widgetId"]}')
+        
+
+    def test_update_widget_dynamodb(self):
+        queue_url = 'https://queue.amazonaws.com/419060363036/cs5260-requests'
+        method = 'dynamodb'
+        destination = 'widgets'
+
+        dynamodb_client = boto3.client('dynamodb')
+
+        #Creates client
+        client = Client.Client(queue_url, method, destination)
+
+        #Creates sample object
+        db_dict = dict()
+        db_dict['widgetId'] = {'S' : '12345'}
+        db_dict['owner'] = {'S' : 'test'}
+        db_dict['label'] = {'S' : 'another test'}
+        
+        #Puts object in DynamoDB table
+        dynamodb_client.put_item(TableName=destination, Item=db_dict)
+
+        #Updates object in S3
+        test_dict = dict()
+        test_dict['widgetId'] = '12345'
+        test_dict['owner'] = 'test'
+        test_dict['description'] = 'yet another test'
+        widget = DynamoDB_Widget.DynamoDB_Widget(test_dict)
+        widget.update_widget(dynamodb_client, destination)
+
+        #Gets updated object from DynamoDB
+        return_item = dynamodb_client.get_item(TableName=destination, Key={'widgetId' : db_dict['widgetId'], 'owner' : db_dict['owner']})
+        db_dict['description'] = {'S' : 'yet another test'}
+
+        self.assertEqual(db_dict, return_item['Item'])
+
+        #Deletes item from DynamoDB
+        dynamodb_client.delete_item(TableName=destination, Key={'widgetId' : db_dict['widgetId'], 'owner' : db_dict['owner']})
 
 
 

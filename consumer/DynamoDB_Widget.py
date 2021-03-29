@@ -28,6 +28,14 @@ class DynamoDB_Widget(Widget.Widget):
 
     def update_widget(self, client, destination):
         try:
-            client.update_item(TableName=destination, Key=self.content)
+            #Gets old item
+            old_item = client.get_item(TableName=destination, Key={'widgetId' : self.content['widgetId'], 'owner' : self.content['owner']})['Item']
+
+            #Updates old item
+            self.content.update(old_item)
+    
+            #Puts widget back on DynamoDB
+            self.create_widget(client, destination)
+
         except ClientError:
             print(f'{self.key} does not exist')
