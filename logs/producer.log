@@ -1,82 +1,97 @@
-2021-03-27 21:58:23,048 [main] INFO edu.usu.cs5260.common.Settings - help: false
-2021-03-27 21:58:23,051 [main] INFO edu.usu.cs5260.common.Settings - profile: default
-2021-03-27 21:58:23,051 [main] INFO edu.usu.cs5260.common.Settings - region: us-east-1
-2021-03-27 21:58:23,052 [main] INFO edu.usu.cs5260.common.Settings - request-bucket: null
-2021-03-27 21:58:23,052 [main] INFO edu.usu.cs5260.common.Settings - request-queue: https://queue.amazonaws.com/419060363036/cs5260-requests
-2021-03-27 21:58:23,053 [main] INFO edu.usu.cs5260.common.Settings - max-runtime: 30000
-2021-03-27 21:58:23,054 [main] INFO edu.usu.cs5260.producer.ProducerSettings - max-widget-requests: 1000
-2021-03-27 21:58:23,054 [main] INFO edu.usu.cs5260.producer.ProducerSettings - inter-request-delay: 100
-2021-03-27 21:58:23,088 [main] WARN software.amazon.awssdk.profiles.internal.ProfileFileReader - Ignoring profile 'daxinator22' on line 5 because it did not start with 'profile ' and it was not 'default'.
-2021-03-27 21:58:23,128 [main] WARN software.amazon.awssdk.profiles.internal.ProfileFileReader - Ignoring profile 'daxinator22' on line 5 because it did not start with 'profile ' and it was not 'default'.
-2021-03-27 21:58:23,465 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:24,270 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:24,462 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:24,652 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:24,842 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:25,035 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:25,227 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:25,419 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:25,611 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:25,803 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:25,995 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:26,185 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:26,374 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:26,565 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:26,753 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:26,944 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:27,147 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:27,337 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:27,525 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:27,715 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:27,905 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:28,097 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:28,287 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:28,478 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:28,669 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:28,857 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:29,047 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:29,238 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:29,426 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:29,632 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:29,822 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:30,010 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:30,202 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:30,392 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:30,584 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:30,774 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:30,964 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:31,154 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:31,342 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:31,534 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:31,722 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:31,910 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:32,102 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:32,370 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:32,560 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:32,748 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:32,938 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:33,126 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:33,318 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:33,522 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:33,710 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:34,152 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:34,342 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:34,534 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:34,722 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:34,914 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:35,100 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:35,289 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:35,476 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:35,698 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:35,935 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:36,127 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:36,319 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:36,511 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:36,703 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:36,895 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:37,087 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:37,279 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:37,467 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:37,671 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
-2021-03-27 21:58:37,859 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
-2021-03-27 21:58:38,047 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:51,862 [main] INFO edu.usu.cs5260.common.Settings - help: false
+2021-03-27 23:54:51,865 [main] INFO edu.usu.cs5260.common.Settings - profile: default
+2021-03-27 23:54:51,865 [main] INFO edu.usu.cs5260.common.Settings - region: us-east-1
+2021-03-27 23:54:51,866 [main] INFO edu.usu.cs5260.common.Settings - request-bucket: null
+2021-03-27 23:54:51,866 [main] INFO edu.usu.cs5260.common.Settings - request-queue: https://queue.amazonaws.com/419060363036/cs5260-requests
+2021-03-27 23:54:51,867 [main] INFO edu.usu.cs5260.common.Settings - max-runtime: 30000
+2021-03-27 23:54:51,868 [main] INFO edu.usu.cs5260.producer.ProducerSettings - max-widget-requests: 1000
+2021-03-27 23:54:51,868 [main] INFO edu.usu.cs5260.producer.ProducerSettings - inter-request-delay: 100
+2021-03-27 23:54:51,901 [main] WARN software.amazon.awssdk.profiles.internal.ProfileFileReader - Ignoring profile 'daxinator22' on line 5 because it did not start with 'profile ' and it was not 'default'.
+2021-03-27 23:54:51,939 [main] WARN software.amazon.awssdk.profiles.internal.ProfileFileReader - Ignoring profile 'daxinator22' on line 5 because it did not start with 'profile ' and it was not 'default'.
+2021-03-27 23:54:52,233 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:53,016 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:53,222 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:53,414 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:53,605 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:53,796 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:53,987 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:54,179 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:54,385 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:54,589 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:54,891 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:55,081 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:55,269 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:55,459 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:55,681 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:55,869 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:56,059 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:56,249 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:56,437 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:56,629 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:56,819 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:57,024 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:57,211 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:57,401 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:57,590 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:57,779 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:57,969 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:58,159 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:58,349 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:58,568 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:58,756 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:58,943 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:59,131 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:59,320 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:59,510 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:59,700 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:54:59,888 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:00,075 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:00,266 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:00,457 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:00,648 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Delete request
+2021-03-27 23:55:00,837 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:01,029 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:01,219 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:01,411 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:01,601 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:01,789 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:01,980 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:02,169 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:02,359 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:02,548 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:03,022 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:03,214 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:03,404 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:03,595 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:03,782 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:03,970 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:04,156 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:04,344 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:04,534 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:04,726 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:04,914 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:05,104 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:05,293 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:05,482 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:05,670 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:05,859 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:06,048 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:06,238 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Delete request
+2021-03-27 23:55:06,426 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:06,614 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:06,800 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Delete request
+2021-03-27 23:55:06,992 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:07,183 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:07,501 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:07,689 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Delete request
+2021-03-27 23:55:07,881 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:08,071 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:08,279 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:08,467 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:08,655 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Delete request
+2021-03-27 23:55:08,843 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:09,081 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
+2021-03-27 23:55:09,267 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:09,490 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:09,697 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate a Create request
+2021-03-27 23:55:09,887 [Thread-0] INFO edu.usu.cs5260.producer.RequestGenerator - Generate an Update request
